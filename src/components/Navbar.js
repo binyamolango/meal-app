@@ -21,7 +21,7 @@ const NavBar = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <NavDropdown title="Location-Inspired-Menus" id="collapsible-nav-dropdown">
+            <NavDropdown title="Location-Inspired-Menu" id="collapsible-nav-dropdown">
               <NavDropdown.Item as={Link} to="/location">Location 1</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/location">Location 2</NavDropdown.Item>
             </NavDropdown>
