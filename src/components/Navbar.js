@@ -3,11 +3,12 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img
@@ -16,21 +17,24 @@ const NavBar = () => {
             className='logo-img'
           />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/location">Location-Inspired Menus</Nav.Link>
-            <Form className="d-flex">
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search by meal name"
-              />
-              <Button as={Link} to="/meal" variant="outline-success">Search</Button>
-            </Form>
+            <NavDropdown title="Location-Inspired-Menus" id="collapsible-nav-dropdown">
+              <NavDropdown.Item as={Link} to="/location">Location 1</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/location">Location 2</NavDropdown.Item>
+            </NavDropdown>
           </Nav>
+          <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Search by meal name"
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button as={Link} to="/meal" variant="outline-success">Search</Button>
+          </Form>
         </Navbar.Collapse>
       </Container>
     </Navbar>
