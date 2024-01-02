@@ -3,8 +3,8 @@ import Home from "./components/Home";
 import LocationMenu from "./components/LocationMenu";
 import Search from "./components/Search";
 import NavBar from "./components/Navbar";
-import Meal from "./components/Meal";
 import MealList from "./components/MealList";
+import MealDetails from "./components/MealDetails";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/location" element={<LocationMenu />} />
             <Route path="/search" element={<Search />} />
-            <Route path="/meal" element={<Meal />} />
+            <Route path="/meal-details" element={<MealDetails />} />
             <Route path="/meal-list/:id" element={<MealList />} />
           </Routes>
         </section>
