@@ -3,6 +3,9 @@ import useFetch from "./useFetch";
 import Spinner from 'react-bootstrap/Spinner';
 import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import Ingredient from "./Ingredient";
 
 const MealDetails = () => {
   const { id } = useParams();
@@ -14,7 +17,6 @@ const MealDetails = () => {
   return (
     <div className="meal-details-page">
       <Container>
-        <h1 className='home-title'>{mealDetails && mealDetails.meals[0].strMeal}</h1>
         {isPending && (
             <div className="spinner__loading">
               <Spinner animation="border" role="status">
@@ -32,7 +34,19 @@ const MealDetails = () => {
                 </p>
               </Alert>
             </div>
-          )}
+        )}
+        {mealDetails && (
+        <><h1 className='home-title'>{mealDetails.meals[0].strMeal}</h1><Card className="meal-details-card">
+            <Card.Img variant="top" src={mealDetails.meals[0].strMealThumb} alt="meal-img" />
+            <Card.Body>
+              <Card.Text>
+                {mealDetails.meals[0].strInstructions}
+              </Card.Text>
+              <Ingredient mealDetails={mealDetails} />
+              <Button variant="outline-success">Add Comment</Button>
+            </Card.Body>
+          </Card></>
+        )}
       </Container>
     </div>
   );

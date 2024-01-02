@@ -54,3 +54,11 @@ a {
   display: flex;
   justify-content: space-between;
 }
+
+.meal-details-card {
+  border: none;
+}
+
+.meal-details-card:hover {
+  transform: scale(1);
+}
