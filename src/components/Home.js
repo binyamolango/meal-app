@@ -13,6 +13,7 @@ const Home = () => {
   return (
     <div className="home-page">
       <Container>
+        <h1 className='title'>Meal Categories</h1>
         {isPending && (
             <div className="spinner__loading">
               <Spinner animation="border" role="status">
