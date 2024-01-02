@@ -11,7 +11,7 @@ const MealListListing = ({ mealList }) => {
           <Card.Img variant="top" src={meal.strMealThumb} alt='meal-img' />
           <Card.Body>
             <Card.Title className='meal-title'><h2>{meal.strMeal}</h2></Card.Title>
-            <Link to={`meal-list/${meal.strMeal}`}>
+            <Link to={`meal-details/${meal.idMeal}`}>
               <Button variant="outline-success">Meal Details</Button>
             </Link>
           </Card.Body>

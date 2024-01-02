@@ -18,7 +18,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/location" element={<LocationMenu />} />
             <Route path="/search" element={<Search />} />
-            <Route path="/meal-details" element={<MealDetails />} />
+            <Route path="/meal-list/:id/meal-details/:id" element={<MealDetails />} />
             <Route path="/meal-list/:id" element={<MealList />} />
           </Routes>
         </section>
