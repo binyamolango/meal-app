@@ -12,9 +12,24 @@ code {
     monospace;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
 .logo-img {
   width: 50px;
   height: 50px;
+}
+
+.card {
+  transform: scale(1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.025);
 }
 
 .col-12 {
@@ -30,7 +45,7 @@ code {
   align-items: center;
 }
 
-.title {
+.home-title {
   text-align: center;
   margin: 1em 0;
 }
