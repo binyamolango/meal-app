@@ -19,7 +19,7 @@ function App() {
             <Route path="/location" element={<LocationMenu />} />
             <Route path="/search" element={<Search />} />
             <Route path="/meal" element={<Meal />} />
-            <Route path="/meal-list" element={<MealList />} />
+            <Route path="/meal-list/:id" element={<MealList />} />
           </Routes>
         </section>
       </div>

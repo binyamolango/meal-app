@@ -10,27 +10,28 @@ const MealCategory = ({ mealCategory }) => {
     mealCategory.categories.map(category => (
       <Col xs={12} md={6} lg={4} xl={3} key={category.idCategory}>
         <Card>
-          <Link to="meal-list">
-            <Card.Img variant="top" src={category.strCategoryThumb} alt='category-img' />
-          </Link>
+          <Card.Img variant="top" src={category.strCategoryThumb} alt='category-img' />
           <Card.Body>
-            <Link to="meal-list">
-              <Card.Title className='category-title'><h2>{category.strCategory}</h2></Card.Title>
-            </Link>
-            <OverlayTrigger
-              trigger="click"
-              key='bottom'
-              placement='bottom'
-              overlay={
-                <Popover id={`popover-positioned-bottom`}>
-                  <Popover.Body>
-                    {category.strCategoryDescription}
-                  </Popover.Body>
-                </Popover>
-              }
-            >
-              <Button variant="outline-success">Food Description</Button>
-            </OverlayTrigger>
+            <Card.Title className='category-title'><h2>{category.strCategory}</h2></Card.Title>
+            <div className="card-body-row">
+              <OverlayTrigger
+                trigger="click"
+                key='bottom'
+                placement='bottom'
+                overlay={
+                  <Popover id={`popover-positioned-bottom`}>
+                    <Popover.Body>
+                      {category.strCategoryDescription}
+                    </Popover.Body>
+                  </Popover>
+                }
+              >
+                <Button variant="outline-success">Description</Button>
+              </OverlayTrigger>
+              <Link to={`meal-list/${category.strCategory}`}>
+                <Button variant="outline-success">Meal List</Button> 
+              </Link>
+            </div>
           </Card.Body>
         </Card>
       </Col>

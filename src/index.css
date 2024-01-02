@@ -49,3 +49,8 @@ a {
   text-align: center;
   margin: 1em 0;
 }
+
+.card-body-row {
+  display: flex;
+  justify-content: space-between;
+}
