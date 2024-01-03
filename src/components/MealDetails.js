@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import Ingredient from "./Ingredient";
 import AddComment from "./AddComment";
+import Comment from "./Comment";
 
 const MealDetails = () => {
   const { id } = useParams();
@@ -43,6 +44,7 @@ const MealDetails = () => {
                 {mealDetails.meals[0].strInstructions}
               </Card.Text>
               <Ingredient mealDetails={mealDetails} />
+              <Comment />
               <AddComment />
             </Card.Body>
           </Card></>

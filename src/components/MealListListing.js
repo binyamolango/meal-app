@@ -11,9 +11,12 @@ const MealListListing = ({ mealList }) => {
           <Card.Img variant="top" src={meal.strMealThumb} alt='meal-img' />
           <Card.Body>
             <Card.Title className='meal-title'><h2>{meal.strMeal}</h2></Card.Title>
-            <Link to={`meal-details/${meal.idMeal}`}>
-              <Button variant="outline-success">Meal Details</Button>
-            </Link>
+            <div className="card-body-row">
+              <Link to={`meal-details/${meal.idMeal}`}>
+                <Button variant="outline-success">Meal Details</Button>
+              </Link>
+              <Button variant="success"><i className="fa-solid fa-thumbs-up"></i></Button>
+            </div>
           </Card.Body>
         </Card>
       </Col>
