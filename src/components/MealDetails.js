@@ -44,8 +44,8 @@ const MealDetails = () => {
                 {mealDetails.meals[0].strInstructions}
               </Card.Text>
               <Ingredient mealDetails={mealDetails} />
-              <Comment />
               <AddComment />
+              <Comment />
             </Card.Body>
           </Card></>
         )}

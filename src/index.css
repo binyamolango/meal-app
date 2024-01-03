@@ -79,3 +79,8 @@ a {
 .meal-details-img:hover {
   transform: scale(1.025);
 }
+
+.pagination-cont {
+  display: flex;
+  justify-content: center;
+}
