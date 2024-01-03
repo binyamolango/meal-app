@@ -4,39 +4,18 @@ import Spinner from 'react-bootstrap/Spinner';
 import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Pagination from 'react-bootstrap/Pagination';
 import MealListListing from "./MealListListing";
-import { useState } from "react";
+import Pagination from 'react-bootstrap/Pagination';
+import PaginationComp from "./PaginationComp";
 
 const MealList = () => {
   const { id } = useParams();
   const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${id}`;
   const { data: mealList, isPending, error, setError } = useFetch(url);
-
-  const [currentPage, setCurrentPage] = useState(1);
-  const pageLimit = 10;
-  const lastItemIdx = currentPage * pageLimit;
-  const firstItemIdx = lastItemIdx - pageLimit;
-  const currentItems = mealList && mealList.meals.slice(firstItemIdx, lastItemIdx);
-
-  const handlePageClick = (currentPage) => {
-    setCurrentPage(currentPage);
-  }
-
-  const maxPageNum = mealList && Math.ceil(mealList.meals.length / pageLimit);
-
-  let pageItems = [];
-  for (let number = 1; number <= maxPageNum; number++) {
-    pageItems.push(
-      <Pagination.Item
-        key={number}
-        active={number === currentPage}
-        onClick={() => handlePageClick(number)}
-      >
-        {number}
-      </Pagination.Item>,
-    );
-  }
+  const {
+    pageItems,
+    currentItems
+  } = PaginationComp(mealList);
 
   return (
     <div className="meal-list-page">
