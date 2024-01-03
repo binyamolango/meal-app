@@ -2,11 +2,9 @@ import { useParams } from "react-router-dom";
 import useFetch from "./useFetch";
 import Details from "./Details";
 
-const MealDetails = () => {
-  const { id } = useParams();
-
-  const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
-
+const MealDisplay = () => {
+  let { name } = useParams();
+  const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`;
   const { data: mealDetails, isPending, error, setError } = useFetch(url);
 
   return (
@@ -21,4 +19,4 @@ const MealDetails = () => {
   );
 }
  
-export default MealDetails;
+export default MealDisplay;

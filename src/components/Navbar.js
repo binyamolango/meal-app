@@ -4,12 +4,21 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import useFetch from './useFetch';
 
 const NavBar = () => {
-  const url = "https://www.themealdb.com/api/json/v1/1/list.php?a=list";
-  const { data: location } = useFetch(url);
+  const [name, setName] = useState('');
+  const baseUrl = "https://www.themealdb.com/api/json/v1/1";
+  const { data: location } = useFetch(`${baseUrl}/list.php?a=list`);
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    navigate(`/meal-display/${name}`);
+  }
 
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
@@ -31,19 +40,21 @@ const NavBar = () => {
               ))}
             </NavDropdown>
           </Nav>
-          <Form className="d-flex">
+          <Form className="d-flex" onSubmit={handleSubmit}>
             <Form.Control
               type="search"
               placeholder="Search by meal name"
               className="me-2"
               aria-label="Search"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
-            <Button as={Link} to="/meal" variant="outline-success">Search</Button>
+            <Button type="submit" variant="outline-success">Search</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
 }
- 
+
 export default NavBar;
