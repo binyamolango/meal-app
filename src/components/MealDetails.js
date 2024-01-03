@@ -38,7 +38,7 @@ const MealDetails = () => {
         )}
         {mealDetails && (
         <><h1 className='home-title'>{mealDetails.meals[0].strMeal}</h1><Card className="meal-details-card">
-            <Card.Img variant="top" src={mealDetails.meals[0].strMealThumb} alt="meal-img" />
+            <Card.Img className="meal-details-img" variant="top" src={mealDetails.meals[0].strMealThumb} alt="meal-img" />
             <Card.Body>
               <Card.Text>
                 {mealDetails.meals[0].strInstructions}
