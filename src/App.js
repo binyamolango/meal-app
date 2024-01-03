@@ -16,7 +16,7 @@ function App() {
         <section className="content">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/location" element={<LocationMenu />} />
+            <Route path="/location/:id" element={<LocationMenu />} />
             <Route path="/search" element={<Search />} />
             <Route path="/meal-list/:id/meal-details/:id" element={<MealDetails />} />
             <Route path="/meal-list/:id" element={<MealList />} />

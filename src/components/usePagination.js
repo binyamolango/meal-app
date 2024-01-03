@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Pagination from 'react-bootstrap/Pagination';
 
-const PaginationComp = (mealList) => {
+const usePagination = (mealList) => {
   const [currentPage, setCurrentPage] = useState(1);
   const pageLimit = 10;
   const lastItemIdx = currentPage * pageLimit;
@@ -32,4 +32,4 @@ const PaginationComp = (mealList) => {
   };
 }
  
-export default PaginationComp;
+export default usePagination;

@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import MealListListing from "./MealListListing";
 import Pagination from 'react-bootstrap/Pagination';
-import PaginationComp from "./PaginationComp";
+import PaginationComp from "./usePagination";
 
 const MealList = () => {
   const { id } = useParams();

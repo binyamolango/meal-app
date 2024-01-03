@@ -5,8 +5,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
+import useFetch from './useFetch';
 
 const NavBar = () => {
+  const url = "https://www.themealdb.com/api/json/v1/1/list.php?a=list";
+  const { data: location } = useFetch(url);
+
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
@@ -22,8 +26,9 @@ const NavBar = () => {
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <NavDropdown title="Location-Inspired-Menu" id="collapsible-nav-dropdown">
-              <NavDropdown.Item as={Link} to="/location">Location 1</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/location">Location 2</NavDropdown.Item>
+              {location && location.meals.map(area => (
+                <NavDropdown.Item key={area.strArea} as={Link} to={`/location/${area.strArea}`}>{area.strArea}</NavDropdown.Item>
+              ))}
             </NavDropdown>
           </Nav>
           <Form className="d-flex">
