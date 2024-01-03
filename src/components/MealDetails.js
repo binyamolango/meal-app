@@ -3,9 +3,9 @@ import useFetch from "./useFetch";
 import Spinner from 'react-bootstrap/Spinner';
 import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Ingredient from "./Ingredient";
+import AddComment from "./AddComment";
 
 const MealDetails = () => {
   const { id } = useParams();
@@ -43,7 +43,7 @@ const MealDetails = () => {
                 {mealDetails.meals[0].strInstructions}
               </Card.Text>
               <Ingredient mealDetails={mealDetails} />
-              <Button variant="outline-success">Add Comment</Button>
+              <AddComment />
             </Card.Body>
           </Card></>
         )}

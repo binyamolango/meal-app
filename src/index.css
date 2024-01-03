@@ -62,3 +62,11 @@ a {
 .meal-details-card:hover {
   transform: scale(1);
 }
+
+.comment-form-col {
+  margin-bottom: 0.25em;
+}
+
+.comment-btn {
+  text-align: center;
+}
