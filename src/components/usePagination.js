@@ -3,7 +3,7 @@ import Pagination from 'react-bootstrap/Pagination';
 
 const usePagination = (mealList) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const pageLimit = 10;
+  const pageLimit = 12;
   const lastItemIdx = currentPage * pageLimit;
   const firstItemIdx = lastItemIdx - pageLimit;
   const currentItems = mealList && mealList.meals.slice(firstItemIdx, lastItemIdx);

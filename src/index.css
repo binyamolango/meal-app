@@ -18,6 +18,11 @@ a {
   cursor: pointer;
 }
 
+p {
+  font-size: 1.125rem;
+  line-height: 1.4;
+}
+
 .logo-img {
   width: 50px;
   height: 50px;
@@ -74,6 +79,9 @@ a {
 .meal-details-img {
   transform: scale(1);
   transition: transform 0.2s ease-in-out;
+  max-width: 900px;
+  max-height: 800px;
+  margin: 0 auto;
 }
 
 .meal-details-img:hover {
