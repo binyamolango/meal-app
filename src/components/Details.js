@@ -5,6 +5,7 @@ import Ingredient from "./Ingredient";
 import AddComment from "./AddComment";
 import Comment from "./Comment";
 import Spinner from 'react-bootstrap/Spinner';
+import CommentSection from './CommentSection';
 
 const Details = (props) => {
   const {
@@ -44,8 +45,7 @@ const Details = (props) => {
               {mealDetails.meals[0].strInstructions}
             </Card.Text>
             <Ingredient mealDetails={mealDetails} />
-            <Comment mealID={mealDetails.meals[0].idMeal} />
-            <AddComment mealID={mealDetails.meals[0].idMeal} />
+            <CommentSection mealID={mealDetails.meals[0].idMeal} />
           </Card.Body>
         </Card></>
       )}

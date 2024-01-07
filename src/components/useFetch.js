@@ -32,7 +32,8 @@ const useFetch = (url) => {
     data,
     isPending,
     error,
-    setError
+    setError,
+    setData
   };
 }
  

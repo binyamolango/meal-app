@@ -1,15 +1,8 @@
 import Card from 'react-bootstrap/Card';
-import useFetch from './useFetch';
 import Spinner from 'react-bootstrap/Spinner';
 import Alert from 'react-bootstrap/Alert';
 
-const Comment = ({ mealID }) => {
-  const baseURL = "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi";
-  const appID = "QiMf0dtRiuLZ03WGn5nN";
-  const commentURL = `${baseURL}/apps/${appID}/comments?item_id=${mealID}`;
-
-  const { data: comments, isPending, error, setError } = useFetch(commentURL);
-
+const Comment = ({ comments, isPending, error, setError }) => {
   return (
     comments && comments.length > 0 && (
       <div className="comment-section">

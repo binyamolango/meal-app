@@ -2,7 +2,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
 
-const AddComment = ({ mealID }) => {
+const AddComment = ({ mealID, updateComments }) => {
   const [name, setName] = useState('');
   const [text, setText] = useState('');
   const [isPending, setIsPending] = useState(false);
@@ -27,6 +27,7 @@ const AddComment = ({ mealID }) => {
         setIsPending(false);
         setName('');
         setText('');
+        updateComments();
       })
   }
 
