@@ -2,8 +2,6 @@ import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import Ingredient from "./Ingredient";
-import AddComment from "./AddComment";
-import Comment from "./Comment";
 import Spinner from 'react-bootstrap/Spinner';
 import CommentSection from './CommentSection';
 
