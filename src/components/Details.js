@@ -44,8 +44,8 @@ const Details = (props) => {
               {mealDetails.meals[0].strInstructions}
             </Card.Text>
             <Ingredient mealDetails={mealDetails} />
-            <AddComment />
-            <Comment />
+            <Comment mealID={mealDetails.meals[0].idMeal} />
+            <AddComment mealID={mealDetails.meals[0].idMeal} />
           </Card.Body>
         </Card></>
       )}

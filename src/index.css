@@ -92,3 +92,7 @@ p {
   display: flex;
   justify-content: center;
 }
+
+.comment-para {
+  margin-bottom: 1em;
+}
