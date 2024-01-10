@@ -1,6 +1,6 @@
 import AddComment from './AddComment';
 import Comment from './Comment';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const CommentSection = ({ mealID }) => {
   const appID = "QiMf0dtRiuLZ03WGn5nN";
@@ -10,28 +10,21 @@ const CommentSection = ({ mealID }) => {
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
 
-  const updateComments = () => {
-    fetch(commentURL)
-    .then((res) => {
+  const updateComments = async () => {
+    try {
+      const res = await fetch(commentURL);
       if (!res.ok) {
-        throw Error("Error! Couldn't fetch the data")
+        throw Error("Error! Couldn't fetch the data");
       } else {
-        return res.json();
+        const data = await res.json();
+        setComments(data);
+        setIsPending(false);
       }
-    })
-    .then((data) => {
-      setComments(data);
-      setIsPending(false);
-    })
-    .catch((err) => {
+    } catch (err) {
       setError(err.message);
       setIsPending(false);
-    })
+    }
   };
-
-  useEffect(() => {
-    updateComments();
-  }, []);
 
   return (
     <div>

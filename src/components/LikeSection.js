@@ -8,12 +8,14 @@ const LikeSection = ({ mealID }) => {
 
   const [likesCol, setLikesCol] = useState(null);
 
-  const updateLikes = () => {
-    fetch(likeURL)
-    .then((res) => res.json())
-    .then((data) => {
+  const updateLikes = async () => {
+    try {
+      const res = await fetch(likeURL);
+      const data = await res.json();
       setLikesCol(data);
-    })
+    } catch (err) {
+      return err.message;
+    }
   };
 
   return (
