@@ -5,7 +5,7 @@ const Comment = ({ comments, isPending, error, setError }) => {
   return (
     comments && comments.length > 0 && (
       <div className="comment-section">
-        <h3 className="home-title">Comments</h3>
+        <h3 className="home-title">Comments({comments.length})</h3>
         <PendingError
           isPending={isPending}
           error={error}
