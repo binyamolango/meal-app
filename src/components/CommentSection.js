@@ -1,32 +1,32 @@
-import useFetch from './useFetch';
 import AddComment from './AddComment';
 import Comment from './Comment';
+import { useState } from 'react';
 
 const CommentSection = ({ mealID }) => {
   const appID = "QiMf0dtRiuLZ03WGn5nN";
   const baseURL = "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi";
   const commentURL = `${baseURL}/apps/${appID}/comments?item_id=${mealID}`;
-
-  const { data: comments, isPending, error, setError, setData: setComments } = useFetch(commentURL);
+  const [comments, setComments] = useState(null);
+  const [isPending, setIsPending] = useState(true);
+  const [error, setError] = useState(null);
 
   const updateComments = () => {
-    // Fetch the updated comments data
     fetch(commentURL)
-      .then(response => {
-        if (!response.ok) {
-          throw Error("Error fetching the comments!");
-        } else {
-          return response.json();
-        }
-      })
-      .then(data => {
-        // Update the comments state with the new data
-        setComments(data);
-      })
-      .catch(error => {
-        // Handle any error that occurs during the fetch
-        setError(error.message);
-      });
+    .then((res) => {
+      if (!res.ok) {
+        throw Error("Error! Couldn't fetch the data")
+      } else {
+        return res.json();
+      }
+    })
+    .then((data) => {
+      setComments(data);
+      setIsPending(false);
+    })
+    .catch((err) => {
+      setError(err.message);
+      setIsPending(false);
+    })
   };
 
   return (
