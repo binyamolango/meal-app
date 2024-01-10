@@ -25,10 +25,10 @@ const AddComment = ({ mealID, updateComments }) => {
       })})
       .then(() => {
         setIsPending(false);
-        setName('');
-        setText('');
         updateComments();
-      })
+      });
+    setName('');
+    setText('');
   }
 
   return (

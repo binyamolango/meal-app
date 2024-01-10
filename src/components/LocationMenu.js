@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import useFetch from "./useFetch";
-import Spinner from 'react-bootstrap/Spinner';
-import Alert from 'react-bootstrap/Alert';
+import PendingError from "./PendingError";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import MealListListing from "./MealListListing";
@@ -21,24 +20,11 @@ const LocationMenu = () => {
     <div className="location-menu-page">
       <Container>
         <h1 className='home-title'>{id}({mealList && mealList.meals.length})</h1>
-        {isPending && (
-            <div className="spinner__loading">
-              <Spinner animation="border" role="status">
-                <span className="visually-hidden">Loading...</span>
-              </Spinner>
-            </div>
-          )}
-          {error && (
-            <div className='error__message'>
-              <Alert variant="danger" onClose={() => setError(null)} dismissible>
-                <Alert.Heading>{error}</Alert.Heading>
-                <p>
-                  The system is not able to reach the required server for fetching the data.
-                  There could some problem with the API address.
-                </p>
-              </Alert>
-            </div>
-          )}
+        <PendingError
+          isPending={isPending}
+          error={error}
+          setError={setError}
+        />
         <Row>
           {currentItems && <MealListListing currentItems={currentItems} />}
         </Row>

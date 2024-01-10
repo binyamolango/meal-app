@@ -12,7 +12,13 @@ const CommentSection = ({ mealID }) => {
   const updateComments = () => {
     // Fetch the updated comments data
     fetch(commentURL)
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw Error("Error fetching the comments!");
+        } else {
+          return response.json();
+        }
+      })
       .then(data => {
         // Update the comments state with the new data
         setComments(data);
