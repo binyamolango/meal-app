@@ -39,6 +39,8 @@
     <li><a href="https://www.javascript.com/">JavaScript</a></li>
     <li><a href="https://react.dev/">React</a></li>
   </ul>
+</details>
+<details>
 <summary>Backend</summary>
   <ul>
     <li><a href="https://www.themealdb.com/api.php">Meal API</a></li>
