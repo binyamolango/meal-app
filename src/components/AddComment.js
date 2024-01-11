@@ -1,6 +1,6 @@
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const AddComment = ({ mealID, updateComments }) => {
   const [name, setName] = useState('');
@@ -9,6 +9,10 @@ const AddComment = ({ mealID, updateComments }) => {
   const appID = "QiMf0dtRiuLZ03WGn5nN";
   const baseURL = "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi";
   const commentURL = `${baseURL}/apps/${appID}/comments`;
+
+  useEffect(() => {
+    updateComments();
+  }, [updateComments]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

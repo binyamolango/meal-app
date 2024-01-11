@@ -1,6 +1,6 @@
 import AddComment from './AddComment';
 import Comment from './Comment';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const CommentSection = ({ mealID }) => {
   const appID = "QiMf0dtRiuLZ03WGn5nN";
@@ -28,10 +28,6 @@ const CommentSection = ({ mealID }) => {
       setIsPending(false);
     })
   };
-
-  useEffect(() => {
-    updateComments();
-  }, []);
 
   return (
     <div>

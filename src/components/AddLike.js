@@ -10,7 +10,7 @@ const AddLikes = ({ mealID, likesCol, updateLikes }) => {
 
   useEffect(() => {
     updateLikes();
-  }, []);
+  }, [updateLikes]);
 
   const handleClick = (e) => {
     e.preventDefault();
