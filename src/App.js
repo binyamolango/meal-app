@@ -5,6 +5,7 @@ import NavBar from "./components/Navbar";
 import MealList from "./components/MealList";
 import MealDetails from "./components/MealDetails";
 import MealDisplay from "./components/MealDisplay";
+import NotFound from "./components/NotFount";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/meal-list/:id/meal-details/:id" element={<MealDetails />} />
             <Route path="/meal-list/:id" element={<MealList />} />
             <Route path="/meal-display/:name" element={<MealDisplay />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </section>
       </div>
