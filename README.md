@@ -24,7 +24,7 @@
 
 # 📖 Meal App <a name="about-project"></a>
 
-**Meal App** is a meal web application based on an external API.
+**Meal App** is a meal web application based on an external API that displays meals based on categories and location. It can also allow the user the like and give comments.
 
 ## 🛠 Built With <a name="built-with"></a>
 
