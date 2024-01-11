@@ -8,11 +8,11 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+    - [Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
-  - [Database](#database)
   - [Usage](#usage)
   - [Run tests](#run-tests)
 - [👥 Authors](#authors)
@@ -55,6 +55,10 @@
 - **Show the list of meals based on location**
 - **Add comments and likes**
 
+### Live Demo <a name="live-demo"></a>
+
+> https://edenic-meal-app.netlify.app/
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -67,7 +71,7 @@ To get a local copy up and running follow these simple example steps.
 
 > - [node](https://nodejs.org/en)
 > - [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/)
-> - IDE
+> - [IDE](https://code.visualstudio.com/download)
 > - Etc
 
 ### Setup
