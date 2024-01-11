@@ -35,9 +35,11 @@ const CommentSection = ({ mealID }) => {
         comments={comments}
         isPending={isPending}
         error={error}
-        setError={setError}
       />
-      <AddComment mealID={mealID} updateComments={updateComments} />
+      <AddComment
+        mealID={mealID}
+        updateComments={updateComments}
+      />
     </div>
   );
 }
