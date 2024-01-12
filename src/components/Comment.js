@@ -7,7 +7,7 @@ const Comment = ({ comments, isPending, error, setError }) => {
       {isPending && <p>Loading comments...</p>}
       {/* {error && <p>Error: {error}</p>} */}
       {comments && comments.length > 0 && comments.map(comment => (
-        <Card key={comment.username} className='comment-para' body>{comment.creation_date} {comment.username}: {comment.comment}</Card>
+        <Card key={comment.username} className='comment-para' body>{comment.creation_date} <strong>{comment.username}</strong>: {comment.comment}</Card>
       ))}
     </div>
   );

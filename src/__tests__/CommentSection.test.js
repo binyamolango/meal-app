@@ -71,14 +71,29 @@ describe("CommentSection", () => {
     useStateSpy.mockRestore();
   })
 
-  // test("Should be able to submit as we click on comment button", async () => {
-  //   render(
-  //     <AddComment
-  //       mealID={1234}
-  //       updateComments={mockedUpdateComments}
-  //     />
-  //   );
-  //   const commentBtn = screen.getByRole('button', { name: "Comment" });
-  //   fireEvent.click(commentBtn)
+  // test("Comments should be displayed in the comment section after successfully adding them", () => {
+  //   const setMockedComments = jest.fn();
+  //   const useStateSpy = jest.spyOn(React, 'useState');
+  //   useStateSpy(initialState => [initialState, setMockedComments]);
+
+  //   render(<CommentSection />);
+
+  //   const nameInput = screen.getByPlaceholderText(/Your name/i);
+  //   const textInput = screen.getByPlaceholderText(/Your insight/i);
+  //   const commentBtn = screen.getByRole('button', { name: /Comment/i });
+  //   const mealID = 1234;
+
+  //   fireEvent.change(nameInput, { target: { value: /Beki/i } });
+  //   fireEvent.change(textInput, { target: { value: /Great!/i } });
+  //   fireEvent.click(commentBtn);
+
+  //   const comment = {
+  //     "item_id": mealID,
+  //     "username": "Beki",
+  //     "comment": "Great!"
+  //   }
+
+  //   setMockedComments(prevComments => [...prevComments, comment]);
+
   // })
 })
