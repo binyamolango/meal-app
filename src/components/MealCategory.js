@@ -7,9 +7,9 @@ import { Link } from 'react-router-dom';
 
 const MealCategory = ({ mealCategory }) => {
   return (
-    mealCategory.categories.map(category => (
+    mealCategory.categories.map((category, index) => (
       <Col xs={12} md={6} lg={4} xl={3} key={category.idCategory}>
-        <Card>
+        <Card data-testid={`meal-category-${index}`}>
           <Card.Img variant="top" src={category.strCategoryThumb} alt='category-img' />
           <Card.Body>
             <Card.Title className='category-title'><h2>{category.strCategory}</h2></Card.Title>
